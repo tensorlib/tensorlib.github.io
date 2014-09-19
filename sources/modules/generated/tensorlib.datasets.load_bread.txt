@@ -1,0 +1,12 @@
+:mod:`tensorlib.datasets`.load_bread
+=================================================
+
+.. currentmodule:: tensorlib.datasets
+
+.. autofunction:: load_bread
+
+.. include:: tensorlib.datasets.load_bread.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

@@ -1,0 +1,41 @@
+
+
+.. _example_plot_bread.py:
+
+
+===================================
+Comparing SVD and CANDECOMP/PARAFAC
+===================================
+
+SVD decomposition can be used to decompose a tensor, but removing the structural
+information involved with having multiple axes changes the decomposition.
+
+The tensor decomposition retains structural information that is otherwise lost.
+
+
+
+
+.. rst-class:: horizontal
+
+
+    *
+
+      .. image:: images/plot_bread_001.png
+            :scale: 47
+
+    *
+
+      .. image:: images/plot_bread_002.png
+            :scale: 47
+
+
+
+
+**Python source code:** :download:`plot_bread.py <plot_bread.py>`
+
+.. literalinclude:: plot_bread.py
+    :lines: 12-
+
+**Total running time of the example:**  0.19 seconds
+( 0 minutes  0.19 seconds)
+    

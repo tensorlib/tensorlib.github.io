@@ -1,0 +1,95 @@
+
+
+
+.. raw:: html
+
+
+    <style type="text/css">
+    div#sidebarbutton {
+        /* hide the sidebar collapser, while ensuring vertical arrangement */
+        width: 0px;
+        overflow: hidden;
+    }
+    </style>
+
+
+Examples
+========
+
+.. _examples-index:
+
+
+
+.. _general_examples:
+
+General examples
+----------------
+
+These are general purpose examples which show a few of the capabilities
+and intended uses of ``tensorlib``.
+
+
+
+
+
+.. raw:: html
+
+
+    <div class="thumbnailContainer">
+        <div class="docstringWrapper">
+
+
+.. figure:: ./images/thumb/plot_meg.png
+   :target: ./plot_meg.html
+
+   :ref:`example_plot_meg.py`
+
+
+.. raw:: html
+
+
+    <p>MEG data is notriously complex. An SVD over the flattened matrix does not give any useful or in...
+    </p></div>
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   ./plot_meg
+
+
+
+.. raw:: html
+
+
+    <div class="thumbnailContainer">
+        <div class="docstringWrapper">
+
+
+.. figure:: ./images/thumb/plot_bread.png
+   :target: ./plot_bread.html
+
+   :ref:`example_plot_bread.py`
+
+
+.. raw:: html
+
+
+    <p>SVD decomposition can be used to decompose a tensor, but removing the structural information in...
+    </p></div>
+    </div>
+
+
+
+.. toctree::
+   :hidden:
+
+   ./plot_bread
+
+
+.. raw:: html
+
+    <div class="clearer"></div>
+    

@@ -1,0 +1,38 @@
+
+
+.. _example_plot_meg.py:
+
+
+======================================================
+CANDECOMP/PARAFAC decomposition for analyzing MEG data
+======================================================
+
+MEG data is notriously complex. An SVD over the flattened matrix does not give
+any useful or interpretable results. Using the extra structural information of
+the dataset, a CANDECOMP/PARAFAC decomposition is able to pull out interesting
+basis functions from this signal.
+
+The waves at 50Hz represent the power line interference (recordings were done
+in the UK), while the longer 10Hz waves appear to represent the "alpha wave"
+of the brain.
+
+The aperiodic signals represent the response of the brain to the presentation of
+an image of a face, or an image of a scrambled face.
+
+
+
+
+.. image:: images/plot_meg_001.png
+    :align: center
+
+
+
+
+**Python source code:** :download:`plot_meg.py <plot_meg.py>`
+
+.. literalinclude:: plot_meg.py
+    :lines: 19-
+
+**Total running time of the example:**  32.43 seconds
+( 0 minutes  32.43 seconds)
+    
