@@ -1,0 +1,12 @@
+:mod:`tensorlib.datasets`.fetch_decmeg
+===================================================
+
+.. currentmodule:: tensorlib.datasets
+
+.. autofunction:: fetch_decmeg
+
+.. include:: tensorlib.datasets.fetch_decmeg.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>

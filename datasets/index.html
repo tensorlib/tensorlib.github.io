@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dataset loading utilities &mdash; tensorlib 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../static/mini_sloth_bw.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="tensorlib 0.0.1 documentation" href="../index.html" />
+    <link rel="next" title="Tensor Decomposition Algorithms" href="../decomposition/index.html" />
+    <link rel="prev" title="About us" href="../about.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../decomposition/index.html" title="Tensor Decomposition Algorithms"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="../about.html" title="About us"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">tensorlib</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../static/mini_sloth_bw.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Dataset loading utilities</a><ul>
+<li><a class="reference internal" href="#sample-datasets">Sample datasets</a></li>
+<li><a class="reference internal" href="#larger-datasets">Larger datasets</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../about.html"
+                        title="previous chapter">About us</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../decomposition/index.html"
+                        title="next chapter">Tensor Decomposition Algorithms</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/datasets/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dataset-loading-utilities">
+<span id="datasets"></span><h1>Dataset loading utilities<a class="headerlink" href="#dataset-loading-utilities" title="Permalink to this headline">¶</a></h1>
+<p>This package features helpers to fetch larger datasets and parameters
+commonly used by the machine learning community to benchmark algorithms on data
+that comes from the &#8216;real world&#8217;.</p>
+<div class="section" id="sample-datasets">
+<span id="id1"></span><h2>Sample datasets<a class="headerlink" href="#sample-datasets" title="Permalink to this headline">¶</a></h2>
+<p>Tensorlib embeds multidimensional sample data for testing algorithms
+and creating examples.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../modules/generated/tensorlib.datasets.load_bread.html#tensorlib.datasets.load_bread" title="tensorlib.datasets.load_bread"><tt class="xref py py-obj docutils literal"><span class="pre">load_bread</span></tt></a>()</td>
+<td>Load brod.mat dataset originally from <a class="reference external" href="http://www.models.life.ku.dk/datasets">http://www.models.life.ku.dk/datasets</a> .</td>
+</tr>
+</tbody>
+</table>
+<a class="reference external image-reference" href="../auto_examples/plot_bread.html"><img alt="../images/plot_bread_0011.png" class="align-center" src="../images/plot_bread_0011.png" style="width: 400.0px; height: 300.0px;" /></a>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li><em class="xref std std-ref">plot_bread.py</em></li>
+</ul>
+</div>
+</div>
+<div class="section" id="larger-datasets">
+<span id="id2"></span><h2>Larger datasets<a class="headerlink" href="#larger-datasets" title="Permalink to this headline">¶</a></h2>
+<p>Tensorlib also includes downloaders for larger datasets that
+can be used for something closer to &#8220;real world&#8221; testing.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../modules/generated/tensorlib.datasets.fetch_decmeg.html#tensorlib.datasets.fetch_decmeg" title="tensorlib.datasets.fetch_decmeg"><tt class="xref py py-obj docutils literal"><span class="pre">fetch_decmeg</span></tt></a>()</td>
+<td>Get and load a subject (subject 4) from the DECMEG dataset.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference external image-reference" href="../auto_examples/datasets/plot_meg.html"><img alt="../images/plot_meg_0011.png" class="align-center" src="../images/plot_meg_0011.png" style="width: 400.0px; height: 300.0px;" /></a>
+<div class="topic">
+<p class="topic-title first">Examples:</p>
+<ul class="simple">
+<li><em class="xref std std-ref">plot_meg.py</em></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../decomposition/index.html" title="Tensor Decomposition Algorithms"
+             >next</a></li>
+        <li class="right" >
+          <a href="../about.html" title="About us"
+             >previous</a> |</li>
+        <li><a href="../index.html">tensorlib</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 - 2016, tensorlib developers (BSD License).
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

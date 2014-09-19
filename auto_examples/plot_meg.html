@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CANDECOMP/PARAFAC decomposition for analyzing MEG data &mdash; tensorlib 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="shortcut icon" href="../static/mini_sloth_bw.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="tensorlib 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Examples" href="index.html" />
+    <link rel="next" title="Comparing SVD and CANDECOMP/PARAFAC" href="plot_bread.html" />
+    <link rel="prev" title="Examples" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="plot_bread.html" title="Comparing SVD and CANDECOMP/PARAFAC"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Examples"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">tensorlib</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../static/mini_sloth_bw.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Examples</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_bread.html"
+                        title="next chapter">Comparing SVD and CANDECOMP/PARAFAC</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../sources/auto_examples/plot_meg.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="candecomp-parafac-decomposition-for-analyzing-meg-data">
+<span id="example-plot-meg-py"></span><h1>CANDECOMP/PARAFAC decomposition for analyzing MEG data<a class="headerlink" href="#candecomp-parafac-decomposition-for-analyzing-meg-data" title="Permalink to this headline">¶</a></h1>
+<p>MEG data is notriously complex. An SVD over the flattened matrix does not give
+any useful or interpretable results. Using the extra structural information of
+the dataset, a CANDECOMP/PARAFAC decomposition is able to pull out interesting
+basis functions from this signal.</p>
+<p>The waves at 50Hz represent the power line interference (recordings were done
+in the UK), while the longer 10Hz waves appear to represent the &#8220;alpha wave&#8221;
+of the brain.</p>
+<p>The aperiodic signals represent the response of the brain to the presentation of
+an image of a face, or an image of a scrambled face.</p>
+<img alt="../images/plot_meg_001.png" class="align-center" src="../images/plot_meg_001.png" />
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../downloads/plot_meg.py"><tt class="xref download docutils literal"><span class="pre">plot_meg.py</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">__doc__</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tensorlib.datasets</span> <span class="kn">import</span> <span class="n">fetch_decmeg</span>
+<span class="kn">from</span> <span class="nn">tensorlib.decomposition</span> <span class="kn">import</span> <span class="n">cp</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">fetch_decmeg</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">125</span><span class="p">:</span><span class="mi">250</span><span class="p">]</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">U0</span><span class="p">,</span> <span class="n">U1</span><span class="p">,</span> <span class="n">U2</span> <span class="o">=</span> <span class="n">cp</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">init_type</span><span class="o">=</span><span class="s">&quot;hosvd&quot;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">U2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&quot;Rank 10 decomposition of MEG data, time axis&quot;</span><span class="p">)</span>
+<a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the example:</strong>  32.43 seconds
+( 0 minutes  32.43 seconds)</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="plot_bread.html" title="Comparing SVD and CANDECOMP/PARAFAC"
+             >next</a></li>
+        <li class="right" >
+          <a href="index.html" title="Examples"
+             >previous</a> |</li>
+        <li><a href="../index.html">tensorlib</a> &raquo;</li>
+          <li><a href="index.html" >Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014 - 2016, tensorlib developers (BSD License).
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

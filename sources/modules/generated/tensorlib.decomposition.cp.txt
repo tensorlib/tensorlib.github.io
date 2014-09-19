@@ -1,0 +1,12 @@
+:mod:`tensorlib.decomposition`.cp
+==============================================
+
+.. currentmodule:: tensorlib.decomposition
+
+.. autofunction:: cp
+
+.. include:: tensorlib.decomposition.cp.examples
+
+.. raw:: html
+
+    <div class="clearer"></div>
